@@ -1,0 +1,17 @@
+{
+  "server": {
+    "protocol": "http",
+    "host": "peatio-react:4200"
+  },
+  "barong": {
+    "authorize_url": "http://barong:8001/oauth/authorize",
+    "access_url": "http://barong:8001/oauth/token",
+    "oauth": 2,
+    "key": "620bfd81d538c510d01b0d6847265d4d3bf6d11169848c0d709700878d45aff8",
+    "secret": "dba7b5eb93f540b475d3d3144b28b7b16843975e9c26164de39a131bd02631ab",
+    "callback": "http://peatio-react:4200/handle_barong_callback",
+    "scope": [
+      "peatio"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "rkcp-server-express",
+  "version": "1.0.0",
+  "description": "OAuth middleware demo on Express.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "PORT=4200 node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "grant-express": "^3.8.2",
+    "morgan": "^1.9.0"
+  }
+}
