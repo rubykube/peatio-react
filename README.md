@@ -92,7 +92,9 @@ First thing lets add name to our Peatio SDK React/Redux Boilerplate edit `/etc/h
 2. and navigate to [Applications](http://barong:8001/oauth/applications)
 3. Create new application with the following callback url `http://peatio-react:4200/connect/barong/callback`
 
-## Concept
+Please, refer to [OAuth2/JWT](/docs/auth.md) fot more details.
+
+## Concept of code
 
 Basic configuraion of this demo compatible with Peatio_workbench authentication flow based on OAuth2. 
 Peatio SDK React/Redux Boilerplate runs on http://peatio-react:4200 (alias to localhost) the only difference is using HashRouter.
