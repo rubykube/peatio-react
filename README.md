@@ -92,7 +92,7 @@ First thing lets add name to our Peatio SDK React/Redux Boilerplate edit `/etc/h
 2. and navigate to [Applications](http://barong:8001/oauth/applications)
 3. Create new application with the following callback url `http://peatio-react:4200/connect/barong/callback`
 
-Please, refer to [OAuth2/JWT](/docs/auth.md) fot more details.
+Please, refer to [OAuth2/JWT](docs/auth.md) fot more details.
 
 ## Concept of code
 
@@ -113,4 +113,4 @@ For visual parts following libraries were used:
 * [antd](https://www.npmjs.com/package/antd)
 
 
-For more details, please read [Development guide](doc/develop.md)
+For more details, please read [Development guide](docs/develop.md)
