@@ -80,7 +80,9 @@ go get -u github.com/fogleman/serve
 
 It uses `$GOPATH/bin/serve` if you forgot PATH, you can run it anywhere.
 
-### Separate OAuth middleware option
+### Separate OAuth middleware option (express.js)
+
+Working directory is `server-express`.
 
 First thing lets add name to our Peatio SDK React/Redux Boilerplate edit `/etc/hosts` and add:
 
@@ -92,7 +94,32 @@ First thing lets add name to our Peatio SDK React/Redux Boilerplate edit `/etc/h
 2. and navigate to [Applications](http://barong:8001/oauth/applications)
 3. Create new application with the following callback url `http://peatio-react:4200/connect/barong/callback`
 
+### Separate OAuth middleware option (rails)
+
+Working directory is `server-rails`.
+
+First thing lets add name to our Peatio SDK React/Redux Boilerplate edit `/etc/hosts` and add:
+
+```
+0.0.0.0 peatio-react
+```
+
+1. Sign in at [barong:8001](http://barong:8001), then go to [/admin](http://barong:8001/admin)
+2. and navigate to [Applications](http://barong:8001/oauth/applications)
+3. Create new application with the following callback url `http://peatio-react:4200/connect/barong/callback`
+
+Put your barong application id and secret to `config/secrets.yml` or set them in env:
+
+```bash
+export BARONG_CLIENT_ID=b3b6ceb05a77f2d3f9bd9f8ebdd943c65f415d3329e98380300ea964d4bb3308
+export BARONG_CLIENT_SECRET=a00c488eb52ebaaf1b1e38fcf06572ebe84387ce65ffe2f4e01dc45cc626e30f
+```
+
+To start the server run `bin/server`. It will build react SPA and start the rails server.
+
 Please, refer to [OAuth2/JWT](docs/auth.md) fot more details.
+
+
 
 ## Concept of code
 

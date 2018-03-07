@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -x
+
+pushd ../develop
+yarn install
+yarn run build
+popd
+
+bundle install
+bundle exec rails server -p 4200 -b 0.0.0.0
