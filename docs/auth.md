@@ -100,14 +100,18 @@ Doorkeeper::JWT.configure do
   token_payload do |opts|
     account = Account.find(opts[:resource_owner_id])
     {
-      email: account.email,
-      profile: account.as_json(
-        only: %i[email role level],
-        include: { profile: { only: %i[first_name last_name state] } }
-      ),
+      jti: SecureRandom.hex(12).upcase,
+      iat: Time.now.to_i,
       exp: 4.hours.from_now.to_i,
-      sub: opts[:application][:uid],
-      aud: opts[:scopes].all
+      sub: "session",
+      iss: "barong",
+      uid: account.uid,
+      aud: opts[:scopes].all,
+      
+      email: account.email,
+      role: account.role,
+      level: account.level,
+      state: account.state
     }
   end
 

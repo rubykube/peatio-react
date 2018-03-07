@@ -33,11 +33,15 @@ BARONG_OAUTH2_REDIRECT_URL=http://localhost:4200#/callback
 
 ## Installation
 
+
+
 ### Static SPA option
 
 You may use either `yarn` or `npm` to install dependencies:
 
 ```bash
+cd develop
+
 yarn install
 
 or
@@ -105,3 +109,6 @@ For visual parts following libraries were used:
 
 * [uniforms](https://www.npmjs.com/package/uniforms)
 * [antd](https://www.npmjs.com/package/antd)
+
+
+For more details, please read [Development guide](doc/develop.md)

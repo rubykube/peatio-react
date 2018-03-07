@@ -44,7 +44,7 @@ export default {
               'Authorization': `Bearer ${jwt}`
             },
           })
-        console.log("Status", res.status);
+        console.log("FETCH RESULT IS", res);
         console.log("StatusText", res.statusText);
         const resJson = yield res.json();
         yield put({ type: 'save', payload: {me: resJson}});
@@ -56,20 +56,27 @@ export default {
       }
       yield put({type: "visuals/callEnded"});
     },
-    *getV2MembersMe({ payload }, {put, call, select}) {
+    *getV2MembersMe({ payload }, {put, call, select, cps}) {
       yield put({type: "visuals/callStarted"});
 
       const data = yield select();
 
-      console.log("DATA", data)
       var jwt = defaultClient.authentications['jwt'];
       
       jwt.accessToken = data.auth.jwtToken;
       var apiInstance = new PeatioSdk.MembersApi();
-      apiInstance.getV2MembersMe((error, data, response)=>ApiChannel.put({
-        type: "getV2MembersMeCallback",
-        payload: {error, data, response}
-      }));  
+      console.log("getV2MembersMe PAYLOAD:", jwt);
+      var getV2MembersMe = (cb)=>{
+        try{
+          apiInstance.getV2MembersMe(cb)
+        } catch(e) {
+          cb({error: e})
+        }
+        
+      }
+      const RES = yield cps(getV2MembersMe);
+      console.log("RES IS ", RES);
+      yield put({type: "visuals/callEnded"});
     },
     *getV2Deposit({ payload }, {put, call, select}) {
       yield put({type: "visuals/callStarted"});

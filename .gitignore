@@ -1,0 +1,9 @@
+/server-express/node_modules
+/develop/node_modules
+
+# production
+/develop/dist
+
+# misc
+.DS_Store
+npm-debug.log*
